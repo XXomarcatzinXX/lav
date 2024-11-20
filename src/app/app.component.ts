@@ -19,5 +19,5 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
       this.primengConfig.ripple = false
   }
-  title = 'lav';
+  title = 'Lavadores admin';
 }
