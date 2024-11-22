@@ -1,0 +1,40 @@
+<!-- <p-button label="Cerrar sesión"
+          type="submit"
+          severity="danger"
+          (click)="logout()" /> -->
+
+<p-sidebar [(visible)]="sidebarVisible"
+           [style]="{ width: '300px' }"
+           [modal]="true"
+           [baseZIndex]="10000">
+    <h2>Menu</h2>
+    <ul class="p-0"
+        style="list-style: none; padding: 0;">
+        <li class="p-mb-3">
+            <p-button label="Inicio"
+                      icon="pi pi-home"
+                      class="p-button-outlined w-full"></p-button>
+        </li>
+        <li class="p-mb-3">
+            <p-button label="Perfil"
+                      icon="pi pi-user"
+                      class="p-button-outlined w-full"></p-button>
+        </li>
+        <li class="p-mb-3">
+            <p-button label="Configuración"
+                      icon="pi pi-cog"
+                      class="p-button-outlined w-full"></p-button>
+        </li>
+        <li>
+            <p-button label="Cerrar Sesión"
+                      icon="pi pi-power-off"
+                      class="p-button-danger w-full"></p-button>
+        </li>
+    </ul>
+</p-sidebar>
+
+<div class="p-d-flex p-ai-center p-jc-start">
+    <p-button (onClick)="sidebarVisible = true"
+              icon="pi pi-bars"
+              class="p-button-outlined"></p-button>
+</div>
