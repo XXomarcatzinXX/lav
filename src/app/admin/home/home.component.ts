@@ -21,10 +21,17 @@ import { MenuItemContent, MenuModule } from 'primeng/menu';
 export class HomeComponent implements OnInit {
   items: MenuItem[] | undefined;
   sidebarVisible: boolean = false;
-
+  emailUser: any
   constructor(private auth: AuthService, private router: Router) {
   }
   ngOnInit() {
+
+    //* user: omar@gmail.com | password: 123456
+
+    this.emailUser = this.auth.getCurrentUser()?.email;
+    console.log(this.emailUser)
+
+
     this.items = [
       {
         separator: true
