@@ -13,7 +13,14 @@ export class AuthService {
   }
   private auth: Auth = inject(Auth);
   login(email: string, password: string) {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return signInWithEmailAndPassword(this.auth, email, password)
+      .then(userCredential => {
+        return userCredential;
+      })
+      .catch(error => {
+        console.error('Error de autenticación:', error.code);
+        throw error;
+      });
   }
   logout() {
     console.log('Se ha cerrado la sesión')
